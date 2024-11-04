@@ -158,6 +158,11 @@
         </array>
       </dict>
       <dict>
+        <!-- Anonymous function -->
+        <key>include</key>
+        <string>#anonymous-function</string>
+      </dict>
+      <dict>
         <!-- Double quoted string -->
         <key>name</key>
         <string>string.quoted.double.kcl</string>
@@ -294,5 +299,59 @@
         <string>\b(\w+)\b</string>
       </dict>
     </array>
+    <key>repository</key>
+    <dict>
+      <key>anonymous-function</key>
+      <dict>
+        <key>name</key>
+        <string>meta.function.anonymous.kcl</string>
+        <key>begin</key>
+        <string>(\()(?=\s*\w+(?:\s*,\s*\w+)*\)\s*=&gt;)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.section.parameters.begin.kcl</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(=&gt;)\s*(\{)</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.fat-arrow.kcl</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.section.block.begin.kcl</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>variable.parameter.kcl</string>
+            <key>match</key>
+            <string>\b\w+\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>punctuation.separator.parameter.function.kcl</string>
+            <key>match</key>
+            <string>,</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>punctuation.section.parameters.end.kcl</string>
+            <key>match</key>
+            <string>\)</string>
+          </dict>
+        </array>
+      </dict>
+    </dict>
   </dict>
 </plist>

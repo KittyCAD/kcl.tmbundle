@@ -254,7 +254,7 @@
         <key>name</key>
         <string>constant.numeric.kcl</string>
         <key>match</key>
-        <string>\b(\d+(\.\d+)?|\.\d+)\b</string>
+        <string>(\b\d+(\.\d+)?|\.\d+)\b</string>
       </dict>
       <dict>
         <key>name</key>

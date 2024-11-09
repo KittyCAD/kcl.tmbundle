@@ -288,9 +288,15 @@
       </dict>
       <dict>
         <key>name</key>
-        <string>punctuation.separator.kcl</string>
+        <string>punctuation.separator.colon.kcl</string>
         <key>match</key>
         <string>:</string>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>punctuation.separator.comma.kcl</string>
+        <key>match</key>
+        <string>,</string>
       </dict>
       <dict>
         <key>name</key>

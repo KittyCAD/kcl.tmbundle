@@ -57,6 +57,49 @@
         <string>=</string>
       </dict>
       <dict>
+        <!-- Import statement -->
+        <key>name</key>
+        <string>meta.module.import.statement.kcl</string>
+        <key>begin</key>
+        <string>\b(import)\s+(?=\w+)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.module.import.kcl</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>\b(from)\s+('[^']*'|"[^"]*")</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.module.import.from.kcl</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.module.kcl</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#import-item</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>punctuation.separator.comma.kcl</string>
+            <key>match</key>
+            <string>,</string>
+          </dict>
+        </array>
+      </dict>
+      <dict>
         <key>name</key>
         <string>keyword.module.import.kcl</string>
         <key>match</key>
@@ -307,6 +350,32 @@
     </array>
     <key>repository</key>
     <dict>
+      <!-- Import item: "foo as bar" in `import foo as bar from "file.kcl"` -->
+      <key>import-item</key>
+      <dict>
+        <key>name</key>
+        <string>meta.module.import.item.kcl</string>
+        <key>match</key>
+        <string>\b(\w+)(?:\s+(as)\s+(\w+))?</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>variable.import.kcl</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.module.import.item.as.kcl</string>
+          </dict>
+          <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>variable.import.alias.kcl</string>
+          </dict>
+        </dict>
+      </dict>
       <key>anonymous-function</key>
       <dict>
         <key>name</key>

@@ -1,5 +1,7 @@
 # KCL tmBundle
 
+See: https://github.com/KittyCAD/tree-sitter-kcl
+
 TextMate grammar for the KCL language. Enables syntax highlighting in Sublime Text.
 
 # Installation
